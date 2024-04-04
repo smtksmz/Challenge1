@@ -7,9 +7,9 @@ public class obstacles : MonoBehaviour
 {
     public GameObject _canvas;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             _canvas.SetActive(true);
             StartCoroutine(TryAgain());
